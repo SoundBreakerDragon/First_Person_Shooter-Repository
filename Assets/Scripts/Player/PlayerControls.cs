@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerControls : MonoBehaviour, iShootControlReviever
+public class PlayerControls : MonoBehaviour, iShootControlReviever, IHealthUpdateReceiver
 {
     [Header("Input Management")]
     Vector3 inputVector;
@@ -31,15 +31,42 @@ public class PlayerControls : MonoBehaviour, iShootControlReviever
     [Header("Shooting")]
     ShootingControl shootControl;
 
+    [Header("Game over")]
+    public GameObject HUDNode;
+    public GameObject deathMenuNode;
+
     // Leave out for now---public GameObject ammoGUI;
-    [SerializeField] 
-    private int currentAmmo = 0; //Store how much ammo we currently hold
+    //[SerializeField] 
+    //private int currentAmmo = 0; //Store how much ammo we currently hold
 
     public void InjectShootControl(ShootingControl shootControl)
     {
         this.shootControl = shootControl;
     }
 
+    void IHealthUpdateReceiver.GetHurt(int currentHealth, int maxHealth)
+    {
+        
+    }
+
+    void IHealthUpdateReceiver.GetHealed(int currentHealth, int maxHealth)
+    {
+        
+    }
+
+    void IHealthUpdateReceiver.GetKilled()
+    {
+        if(HUDNode != null)
+        {
+            HUDNode.SetActive(false);
+        }
+        if (deathMenuNode != null)
+        {
+            deathMenuNode.SetActive(true);
+        }
+
+        Destroy(this);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -144,4 +171,5 @@ public class PlayerControls : MonoBehaviour, iShootControlReviever
     {
         return (controller.collisionFlags & CollisionFlags.Below) != 0;
     }
+
 }

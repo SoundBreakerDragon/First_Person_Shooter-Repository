@@ -5,7 +5,7 @@ public class SceneLoader : MonoBehaviour
 {
     public void loadScene(string sceneName)
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ReloadCurrentScene()
