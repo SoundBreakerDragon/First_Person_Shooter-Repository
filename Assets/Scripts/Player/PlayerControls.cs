@@ -68,11 +68,17 @@ public class PlayerControls : MonoBehaviour, iShootControlReviever, IHealthUpdat
         Destroy(this);
     }
 
+    private void OnDestroy() //Gets called when this object gets deleted
+    {
+        pauseListener.Destroy();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //gameObject here is the same object as our player object
         controller = gameObject.GetComponent<CharacterController>();
+        pauseListener = new PauseListener();
     }
 
 
@@ -80,6 +86,10 @@ public class PlayerControls : MonoBehaviour, iShootControlReviever, IHealthUpdat
     // Update is called once per frame
     void Update()
     {
+        if (pauseListener.paused)
+        {
+            return;
+        }
         GetInput();
         Move();
         Rotate();

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3710030209668735295
+--- !u!1001 &4188900959411329750
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1286042533430043076, guid: b32666ed2636f6047b3ec6127ef3496a, type: 3}
       propertyPath: m_text
-      value: Settings
+      value: Back
       objectReference: {fileID: 0}
     - target: {fileID: 3095856190374330135, guid: b32666ed2636f6047b3ec6127ef3496a, type: 3}
       propertyPath: m_Name
-      value: Setting Button
+      value: Back Button
       objectReference: {fileID: 0}
     - target: {fileID: 8071497240244008882, guid: b32666ed2636f6047b3ec6127ef3496a, type: 3}
       propertyPath: m_Pivot.x
@@ -96,42 +96,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8166297586605399380, guid: b32666ed2636f6047b3ec6127ef3496a, type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8166297586605399380, guid: b32666ed2636f6047b3ec6127ef3496a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8166297586605399380, guid: b32666ed2636f6047b3ec6127ef3496a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8166297586605399380, guid: b32666ed2636f6047b3ec6127ef3496a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3095856190374330135, guid: b32666ed2636f6047b3ec6127ef3496a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5484825284443552888}
+      addedObject: {fileID: 5880344758992403042}
   m_SourcePrefab: {fileID: 100100000, guid: b32666ed2636f6047b3ec6127ef3496a, type: 3}
---- !u!1 &1840314307669220904 stripped
+--- !u!1 &1213517754606675393 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3095856190374330135, guid: b32666ed2636f6047b3ec6127ef3496a, type: 3}
-  m_PrefabInstance: {fileID: 3710030209668735295}
+  m_PrefabInstance: {fileID: 4188900959411329750}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5484825284443552888
+--- !u!114 &5880344758992403042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840314307669220904}
+  m_GameObject: {fileID: 1213517754606675393}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37c65712ff215fe4c8d813f46441f9d5, type: 3}

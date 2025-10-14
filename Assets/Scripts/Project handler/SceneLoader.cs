@@ -5,6 +5,7 @@ public class SceneLoader : MonoBehaviour
 {
     public void loadScene(string sceneName)
     {
+        PauseManager.Reset();
         SceneManager.LoadScene(sceneName);
     }
 
