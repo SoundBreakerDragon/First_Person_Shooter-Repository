@@ -35,6 +35,9 @@ public class PlayerControls : MonoBehaviour, iShootControlReviever, IHealthUpdat
     public GameObject HUDNode;
     public GameObject deathMenuNode;
 
+    [Header("Pause Listener")]
+    PauseListener pauseListener;
+
     // Leave out for now---public GameObject ammoGUI;
     //[SerializeField] 
     //private int currentAmmo = 0; //Store how much ammo we currently hold
