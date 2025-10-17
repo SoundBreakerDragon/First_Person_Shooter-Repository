@@ -35,7 +35,7 @@ public class PlayerControls : MonoBehaviour, iShootControlReviever, IHealthUpdat
     public GameObject HUDNode;
     public GameObject deathMenuNode;
 
-    [Header("Pause Listener")]
+    [Header("OpenPauseMenu Listener")]
     PauseListener pauseListener;
 
     // Leave out for now---public GameObject ammoGUI;

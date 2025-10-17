@@ -10,6 +10,7 @@ public class AIBrain : MonoBehaviour, IHealthUpdateReceiver
     public GameObject target;
     [HideInInspector]
     public NavMeshAgent agent;
+    private PauseListener pauseListener;
 
     [Header("State Management")]
     public States startState;
@@ -76,6 +77,7 @@ public class AIBrain : MonoBehaviour, IHealthUpdateReceiver
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
+        pauseListener = new PauseListener();
 
         InjectBrain();
 
@@ -89,7 +91,7 @@ public class AIBrain : MonoBehaviour, IHealthUpdateReceiver
         {
             currentState = states[0];
         }
-
+        
         startNewState();
     }
 
@@ -105,9 +107,18 @@ public class AIBrain : MonoBehaviour, IHealthUpdateReceiver
         }
     }
 
+    private void OnDestroy()
+    {
+        pauseListener.Destroy();
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (pauseListener.paused)
+        {
+            return;
+        }
         RunSensors();
         RunState();
     }

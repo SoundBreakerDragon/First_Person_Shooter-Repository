@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acbb36c42ddc09e4ea324208bacda951, type: 3}
+  m_Name: Cursor Load Manager
+  m_EditorClassIdentifier: 
+  startLocked:
+  - {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+  startUnLocked:
+  - {fileID: 102900000, guid: ec9ae11f95f193b44b935ea10a57f128, type: 3}
+  - {fileID: 102900000, guid: cdba28eb1f37e1c4e9c28869aaf33f95, type: 3}
