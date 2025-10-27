@@ -2,7 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingControl : MonoBehaviour, iFactionControlReciever
+public class ShootingControl : MonoBehaviour, iFactionControlReciever, iAnimationCaller
 {
     [Header("Shoot Vars")]
     public float maxFireRange = 1000;
@@ -31,6 +31,8 @@ public class ShootingControl : MonoBehaviour, iFactionControlReciever
     public GameObject projectileFlashPrefab;
     public GameObject projectileObjPrefab;
     public GameObject projectileHitPrefab;
+    CharacterAnimationHandler animationHandler;
+    //--List<CharacterAnimationHandler> animationHandlers = new List<CharacterAnimationHandler>();
 
     [Header("GUI")]
     public AmmoDisplayController ammoDisplay;
@@ -38,6 +40,12 @@ public class ShootingControl : MonoBehaviour, iFactionControlReciever
     public void InjectFactionControl(FactionManager factionManager)
     {
         this.factionManager = factionManager;
+    }
+
+    void iAnimationCaller.InjectAnimationHandler(CharacterAnimationHandler animationHandler)
+    {
+        this.animationHandler = animationHandler;
+        //--animationHandlers.Add(animationHandler);
     }
 
     private void Start()
@@ -188,6 +196,11 @@ public class ShootingControl : MonoBehaviour, iFactionControlReciever
     #region Effects
     void Effect_Fire()
     {
+        if (animationHandler != null)
+        {
+            animationHandler.SetTrigger("shoot");
+        }
+
         if(projectileFlashPrefab != null)
         {
             Instantiate(projectileFlashPrefab, firePoint);
@@ -255,6 +268,8 @@ public class ShootingControl : MonoBehaviour, iFactionControlReciever
         return enemyHealth != null 
             && (factionManager == null || enemyHealth.CanReceiveDamage(factionManager.faction));
     }
+
+
 
     #endregion
 
