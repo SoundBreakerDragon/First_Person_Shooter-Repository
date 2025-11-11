@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawn_Enemies : MonoBehaviour
@@ -8,6 +9,9 @@ public class Spawn_Enemies : MonoBehaviour
 
     [Header("Debuging options")]
     public float spawnDelayTimer = 2f;
+
+    [Header("Patrol point for patrolling enimies")]
+    public List<Transform> patrolPoints;
 
     bool SpawnCompleted = false;
 
@@ -35,9 +39,11 @@ public class Spawn_Enemies : MonoBehaviour
 
     private void spawnEnemy()
     {
-        Instantiate(Enemytype, Enemytype.transform.position, Quaternion.identity);
+        Instantiate(Enemytype, transform.position, transform.rotation);
+        
 
         //Try and figure out how to add state patrol to this.
-        //GetComponents<State_Patrol> getComponents = GetComponents<State_Patrol>();
+
+        //GetComponents<Patrol_points>
     }
 }

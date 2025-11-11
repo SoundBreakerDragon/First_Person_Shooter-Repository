@@ -22,6 +22,16 @@ public class State_Patrol : States
     [Header("Transitions")]
     public States alertState;
 
+    #region Enemy Spawner
+    public static GameObject instance;
+
+    private void Awake()
+    {
+        instance = this.gameObject;
+        List<Transform> list = new List<Transform>();
+    }
+    #endregion
+
     #region State Running
 
     public override void startState()
