@@ -29,7 +29,22 @@ public class State_Patrol : States
     {
         instance = this.gameObject;
         List<Transform> list = new List<Transform>();
+
+        //for (int i = 0; i < patrolPointsAmount; i++)
+        //{
+        //    list.Add(GameObject.Find("Patrol Point (" + i + ")"));
+        //}
+
+        //GameObject.Find("Patrol Point (1)");
+
+        //object instance = this.GameObject(patrolPoints);
+
+
+
+        
     }
+
+    
     #endregion
 
     #region State Running
