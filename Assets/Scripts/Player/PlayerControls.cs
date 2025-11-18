@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour, iShootControlReviever, IHealthUpdateReceiver
 {
@@ -127,8 +128,17 @@ public class PlayerControls : MonoBehaviour, iShootControlReviever, IHealthUpdat
 
     void Move()
     {
-        //Foward, Back, Left, Right movement
-        Vector3 moveVector = transform.TransformDirection(inputVector);
+        if(Input.GetKeyDown(KeyCode.LeftShift) ||  Input.GetKeyDown(KeyCode.RightShift))
+        {
+            MoveSpeed = 10;
+        }
+        else
+        {
+            MoveSpeed = 5;
+        }
+
+            //Foward, Back, Left, Right movement
+            Vector3 moveVector = transform.TransformDirection(inputVector);
         moveVector *= MoveSpeed * Time.deltaTime;
 
         //Jump movement

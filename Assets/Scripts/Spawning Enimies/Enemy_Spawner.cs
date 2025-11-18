@@ -11,6 +11,8 @@ public class Enemy_Spawner : MonoBehaviour
     public int spawner_number;
     public List<Transform> patrolPoints;
 
+    public bool playerDetection { get; internal set; }
+
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.E))

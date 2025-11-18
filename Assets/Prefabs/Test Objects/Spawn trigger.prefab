@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6340183447591199640, guid: 9f56cfcb565228348a0ae28bba9d4a9e, type: 3}
       propertyPath: m_Name
-      value: Test trigger
+      value: Spawn trigger
       objectReference: {fileID: 0}
     - target: {fileID: 7905131938938146738, guid: 9f56cfcb565228348a0ae28bba9d4a9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,7 +52,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2603146979837689662, guid: 9f56cfcb565228348a0ae28bba9d4a9e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

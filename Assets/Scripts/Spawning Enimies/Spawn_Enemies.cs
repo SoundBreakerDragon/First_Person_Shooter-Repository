@@ -14,14 +14,20 @@ public class Spawn_Enemies : MonoBehaviour
     float spawnTime;
     float timer;
 
-    [Header("Patrol point for patrolling enimies")]
+    [Header("Tranfer enemy patrol points (if any)")]
     public List<Transform> patrolPoints;
 
-    
-    bool SpawnCompleted = false;
+    //This area of code is planned to allow the spawners to get enabled by a trigger
+    #region spawn trigger
+    //bool SpawnCompleted = false;
+    //[SerializeField]
+    //public bool playerDetection = false;
+    //int loopCount = 0;
+    //bool loopCompleted = false;
+    //public Enemy_Spawner_trigger enemy_Spawner_Trigger;
 
-    //This will be hadle by the tigger GameObject later on.
-    bool playerDetected = true;
+    //Enemy_Spawner_trigger playerDetection;
+    #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,6 +43,7 @@ public class Spawn_Enemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Delays the amount of time each enemy spawns
         if (enemySpawned < enemyAmount)
         {
             timer += Time.deltaTime;
@@ -47,6 +54,40 @@ public class Spawn_Enemies : MonoBehaviour
                 ResetSpawnTime();
             }
         }
+
+        #region Spawn trigger version of code (Unfinished)
+        //if (playerDetection == true)
+        //{
+        //    
+        //    print("Player entered area :)");
+        //    Debug.LogWarning(enemySpawned);
+        //    Debug.LogWarning(enemyAmount);
+        //    
+        //
+        //    //Delays the amount of time each enemy spawns
+        //    if (enemySpawned < enemyAmount)
+        //    {
+        //        timer += Time.deltaTime;
+        //
+        //        if (timer > spawnTime)
+        //        {
+        //            spawnEnemy();
+        //            ResetSpawnTime();
+        //            loopCount ++;
+        //            print(loopCount);
+        //        }
+        //    }
+        //
+        //}
+        //
+        //if (loopCount > enemyAmount)
+        //{
+        //    print("Enter output");
+        //    enemy_Spawner_Trigger.spawncomplete = true;
+        //    playerDetection = false;
+        //}
+        #endregion
+
     }
 
     private void spawnEnemy()
