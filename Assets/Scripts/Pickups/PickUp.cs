@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -7,6 +8,7 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public float value = 1;
+    public List<GameObject> Keycards;
 
     void PickupObject(PickupControl pickupControl)
     {
